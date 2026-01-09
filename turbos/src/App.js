@@ -14,6 +14,7 @@ function App() {
     <Router>
       <Routes>
         {/* 1. 로그인 : Layout 없이 단독 표시함*/}
+        {/*test*/}
         <Route 
           path="/" 
           element={isLoggedIn ? <Navigate to="/statistic/dashboard" /> : <LoginPage setIsLoggedIn={setIsLoggedIn} />} 
