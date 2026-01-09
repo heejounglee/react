@@ -13,7 +13,7 @@ function App() {
   return (
     <Router>
       <Routes>
-        {/* 1. 로그인 : Layout 없이 단독 표시 */}
+        {/* 1. 로그인 : Layout 없이 단독 표시함*/}
         <Route 
           path="/" 
           element={isLoggedIn ? <Navigate to="/statistic/dashboard" /> : <LoginPage setIsLoggedIn={setIsLoggedIn} />} 
