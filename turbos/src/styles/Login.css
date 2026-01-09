@@ -1,0 +1,192 @@
+/* src/styles/Login.css */
+
+/* 배경 설정 */
+.login-container {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #1a1c23; /* 딥 네이비 배경 */
+  position: relative;
+  overflow: hidden;
+  font-family: 'Pretendard', sans-serif;
+}
+
+.login-main {
+  flex: 1;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* 배경 블루 그라데이션 포인트 */
+.bg-blur-effect {
+  position: absolute;
+  width: 500px;
+  height: 500px;
+  background: radial-gradient(circle, rgba(0, 123, 255, 0.15) 0%, rgba(26, 28, 35, 0) 70%);
+  top: -10%;
+  right: -10%;
+  z-index: 1;
+}
+
+/* 로그인 카드 */
+.login-card {
+  width: 100%;
+  max-width: 420px;
+  background-color: #ffffff;
+  padding: 40px;
+  border-radius: 20px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+  z-index: 10;
+}
+
+.login-header {
+  text-align: center;
+  margin-bottom: 35px;
+}
+
+.brand-logo {
+  font-size: 40px;
+  margin-bottom: 10px;
+}
+
+/*
+.login-header h1 {
+  font-size: 28px;
+  color: #1a1c23;
+  margin: 0;
+  letter-spacing: -1px;
+}*/
+
+.login-header p {
+  color: #718096;
+  font-size: 14px;
+  margin-top: 8px;
+}
+
+/* 폼 스타일 */
+.input-group {
+  margin-bottom: 20px;
+}
+
+.input-group label {
+  display: block;
+  font-size: 12px;
+  font-weight: 700;
+  color: #4a5568;
+  margin-bottom: 8px;
+  text-transform: uppercase;
+}
+
+.input-group input {
+  width: 100%;
+  padding: 14px 16px;
+  border: 1.5px solid #e2e8f0;
+  border-radius: 10px;
+  font-size: 15px;
+  box-sizing: border-box;
+  transition: all 0.2s ease;
+}
+
+.input-group input:focus {
+  outline: none;
+  border-color: #007bff;
+  box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.1);
+}
+
+/* 비밀번호 필드 특수 처리 */
+.pw-input-wrapper {
+  position: relative;
+}
+
+.pw-toggle {
+  position: absolute;
+  right: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 18px;
+}
+
+/* 옵션 영역 */
+.login-options {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 13px;
+  color: #718096;
+  margin-bottom: 25px;
+}
+
+.checkbox-label {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+
+.checkbox-label input {
+  margin-right: 6px;
+}
+
+.find-pw {
+  cursor: pointer;
+  color: #007bff;
+  font-weight: 500;
+}
+
+/* 로그인 버튼 */
+.login-submit-btn {
+  width: 100%;
+  padding: 16px;
+  background-color: #007bff; /* 포인트 블루 */
+  color: white;
+  border: none;
+  border-radius: 12px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.login-submit-btn:hover {
+  background-color: #0056b3;
+}
+
+/* 푸터 및 상태 표시 */
+.login-footer {
+  margin-top: 30px;
+  text-align: center;
+  border-top: 1px solid #edf2f7;
+  padding-top: 20px;
+}
+
+.login-footer p {
+  font-size: 12px;
+  color: #a0aec0;
+  margin-bottom: 10px;
+}
+
+.system-status {
+  font-size: 11px;
+  color: #2d3748;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: 500;
+}
+
+.status-dot {
+  width: 6px;
+  height: 6px;
+  background-color: #48bb78; /* 시스템 정상 초록색 */
+  border-radius: 50%;
+  margin-right: 6px;
+  display: inline-block;
+  box-shadow: 0 0 8px #48bb78;
+}

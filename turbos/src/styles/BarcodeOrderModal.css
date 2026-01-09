@@ -1,0 +1,167 @@
+/* BarcodeOrderModal.css */
+
+/* 배경 레이어 */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.6);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+/* 모달 컨텐츠 박스 */
+.modal-content-order {
+  background-color: #fff;
+  width: 550px;
+  padding: 20px;
+  border-radius: 12px;
+  position: relative;
+}
+
+.modal-header-order {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 15px;
+}
+
+.close-btn-order {
+  border: none;
+  background: none;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+/* 스캔 섹션 */
+.scan-section-order {
+  background-color: #f1f3f5;
+  padding: 15px;
+  border-radius: 8px;
+}
+
+.scan-btn-group {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+
+.barcode-btn {
+  padding: 8px 15px;
+  background-color: #343a40;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.manual-btn {
+  padding: 8px 15px;
+  background-color: #17a2b8;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.barcode-hidden-input {
+  width: 100%;
+  padding: 10px;
+  text-align: center;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+/* 수기 입력 레이어 (팝업 위 팝업) */
+.manual-layer-order {
+  position: absolute;
+  top: 80px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #fff;
+  padding: 25px;
+  border-radius: 12px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.25);
+  z-index: 1001;
+  width: 90%;
+  border: 1px solid #dee2e6;
+}
+
+.input-group-order {
+  margin-bottom: 10px;
+}
+
+.label-order {
+  display: block;
+  font-size: 12px;
+  color: #666;
+  margin-bottom: 4px;
+}
+
+.manual-input-field {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+.btn-group-manual {
+  display: flex;
+  gap: 10px;
+  margin-top: 15px;
+}
+
+.add-cart-btn {
+  flex: 2;
+  padding: 12px;
+  background-color: #28a745;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.cancel-manual-btn {
+  flex: 1;
+  padding: 12px;
+  background-color: #6c757d;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+/* 푸터 영역 */
+.modal-footer-order {
+  margin-top: 15px;
+  border-top: 1px solid #eee;
+  padding-top: 15px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.total-summary {
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.total-price-text {
+  color: #d9534f;
+}
+
+.pay-execute-btn {
+  padding: 10px 25px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  font-weight: bold;
+  cursor: pointer;
+}

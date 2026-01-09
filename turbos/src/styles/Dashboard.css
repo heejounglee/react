@@ -1,0 +1,68 @@
+/* src/styles/Dashboard.css */
+
+.dashboard-grid {
+  display: grid;
+  /* 2x2 레이아웃을 위해 2개의 동일한 너비의 컬럼 정의 */
+  grid-template-columns: 1fr 1fr; 
+  gap: 20px; /* 항목 사이 간격 */
+  margin-top: 20px;
+}
+
+.card {
+  background: #fff;
+  padding: 1.5rem;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+  /* 추가: 차트 무한 증식 방지를 위한 고정 높이 */
+  height: 400px; 
+  position: relative;
+  overflow: hidden;
+}
+
+/* 차트 내부 캔버스 크기를 제한 */
+.chart-container canvas {
+  max-height: 320px !important; /* 제목 영역을 제외한 차트 순수 높이 */
+}
+
+.card h3 {
+  margin-bottom: 1rem;
+  color: var(--primary-color, #798faf); /* 기본색이 없다면 #000C7B 사용 */
+}
+
+/* --- 선차트(3개년 매출) 전용 스타일 --- */
+/* 하단 선차트 카드가 전체 너비를 차지하도록 설정 */
+/* yearly-section의 위치를 강제로 1열부터 2열까지 확장 */
+.yearly-section {
+  grid-column: 1 / span 2; /* 확실하게 2칸을 차지하도록 지정 */
+  margin-top: 20px;
+  width: 100%;
+}
+
+/* --- Table Styles --- */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 1rem;
+}
+
+table th, table td {
+  padding: 10px;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+}
+
+table th {
+  background-color: #f4f4f4;
+  font-weight: 500;
+}
+
+/* 반응형 조정: 화면이 좁아지면 컬럼을 1개로 변경 */
+@media (max-width: 992px) {
+  .dashboard-grid {
+    grid-template-columns: 1fr; /* 모바일이나 태블릿에서는 세로로 쌓이게 */
+  }
+
+  .yearly-section {
+    grid-column: 1; /* 모바일에서는 1칸만 차지 */
+  }
+}

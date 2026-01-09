@@ -1,0 +1,76 @@
+/* 기본 레이아웃 (데스크탑 우선 스타일) */
+.receipt-modal-overlay {
+  position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+  background: rgba(0, 0, 0, 0.7); /* 배경 조금 더 어둡게 하여 영수증 강조 */
+  display: flex; justify-content: center; align-items: center; z-index: 1000;
+}
+
+.receipt-paper {
+  background: #fff;
+  padding: 30px; /* 데스크탑 여백 확대 */
+  font-family: 'Courier New', Courier, monospace;
+  box-shadow: 0 15px 35px rgba(0,0,0,0.3);
+  max-height: 90vh;
+  overflow-y: auto;
+  position: relative;
+  
+  /* [데스크탑 기준] 크게 보기 */
+  width: 480px; 
+}
+
+/* --- 글자 크기 조정 (데스크탑 기준) --- */
+.receipt-header h2 { margin: 0; font-size: 26px; text-decoration: underline; }
+.shop-name { font-weight: bold; margin: 8px 0; font-size: 18px; }
+.receipt-header p { font-size: 14px; margin: 3px 0; color: #555; }
+.receipt-info { font-size: 15px; }
+.receipt-table { font-size: 15px; margin: 15px 0; }
+.total-row { font-size: 20px; }
+.total-row.sub { font-size: 15px; }
+.receipt-footer { font-size: 14px; }
+
+/* -------------------------------------------
+   [모바일 전용 스타일] 화면 너비 768px 미만
+------------------------------------------- */
+@media (max-width: 767px) {
+  .receipt-paper {
+    width: 320px; /* 실제 영수증 폭으로 축소 */
+    padding: 20px;
+  }
+  
+  /* 글자 크기를 작게 조정 */
+  .receipt-header h2 { font-size: 20px; }
+  .shop-name { font-size: 16px; }
+  .receipt-header p { font-size: 12px; }
+  .receipt-info { font-size: 13px; }
+  .receipt-table { font-size: 13px; }
+  .total-row { font-size: 16px; }
+  .total-row.sub { font-size: 13px; }
+  .receipt-footer { font-size: 12px; }
+}
+
+/* --- 공통 요소 --- */
+.receipt-divider { text-align: center; color: #888; margin: 10px 0; letter-spacing: -1px; }
+.receipt-info p { display: flex; justify-content: space-between; margin: 5px 0; }
+.receipt-table { width: 100%; border-collapse: collapse; }
+.receipt-table th { border-bottom: 2px solid #000; padding-bottom: 8px; }
+.receipt-table td { padding: 8px 0; }
+.receipt-total { margin-top: 15px; border-top: 1px dashed #000; padding-top: 15px; }
+.total-row { display: flex; justify-content: space-between; font-weight: bold; }
+.barcode-placeholder { margin-top: 15px; font-size: 24px; letter-spacing: 4px; text-align: center; }
+
+.receipt-actions { display: flex; gap: 10px; margin-top: 30px; }
+.print-btn { flex: 1; padding: 12px; background: #000C7B; color: #fff; border: none; cursor: pointer; font-weight: bold; border-radius: 4px; }
+.close-btn { flex: 1; padding: 12px; background: #eee; border: none; cursor: pointer; font-weight: bold; border-radius: 4px; }
+
+/* --- [인쇄 전용 스타일] 인쇄 시에는 무조건 영수증 크기로 출력 --- */
+@media print {
+  .no-print { display: none !important; }
+  body * { visibility: hidden; }
+  .receipt-paper, .receipt-paper * { visibility: visible; }
+  .receipt-paper { 
+    position: absolute; left: 0; top: 0; 
+    width: 100%; /* 인쇄 장치 너비에 맞춤 */
+    box-shadow: none; 
+    padding: 10px;
+  }
+}

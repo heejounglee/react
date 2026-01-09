@@ -1,0 +1,172 @@
+/* src/styles/Layout.css - Updated with #000C7B theme */
+
+:root {
+  --primary-color: #000C7B; /* 메인 테마 색상 (짙은 네이비) */
+  --text-on-primary: #ffffff; /* 메인 색상 위 텍스트 */
+  --background-light: #f9f9ff; /* 밝은 배경색 */
+  --navigator-bg: #ffffff; /* 네비게이터 배경색 */
+  --accent-color: #001a9a; /* 약간 더 밝은 강조색 */
+}
+
+.app-container {
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+  background-color: var(--background-light);
+}
+
+.main-content-wrapper {
+  display: flex;
+  flex: 1;
+}
+
+/* --- Header Styles --- */
+header {
+  background-color: var(--primary-color);
+  color: var(--text-on-primary);
+  padding: 1rem 1.5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 10;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.menu-toggle {
+  display: none; /* 기본적으로 숨김 (PC 버전) */
+  background: none;
+  border: none;
+  color: var(--text-on-primary);
+  font-size: 1.8rem;
+  cursor: pointer;
+}
+
+/* --- Footer Styles --- */
+footer {
+  background-color: var(--primary-color);
+  color: var(--text-on-primary);
+  padding: 0.5rem;
+  text-align: center;
+  font-size: 0.8rem;
+  opacity: 0.8;
+}
+
+/* --- Navigator Styles --- */
+nav.navigator {
+  width: 250px;
+  background-color: var(--navigator-bg);
+  padding: 1rem 0;
+  overflow-y: auto;
+  transition: transform 0.3s ease-in-out;
+  box-shadow: 2px 0 5px rgba(0, 0, 0, 0.05);
+}
+
+.menu-item {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.menu-item a {
+    text-decoration: none;
+    color: #333; /* 기본 텍스트 색상 */
+    padding: 0.75rem 1.5rem;
+    display: block;
+    transition: background-color 0.2s;
+    border-left: 4px solid transparent;
+}
+
+.menu-item a:hover {
+    background-color: var(--background-light);
+}
+
+/* 활성(Active) 메뉴 아이템 스타일 */
+.menu-item a[style*="font-weight: bold"] {
+    background-color: #e6eafc; /* 메인 색상 계열의 아주 밝은 배경 */
+    color: var(--primary-color) !important;
+    border-left-color: var(--primary-color); /* 왼쪽 바 강조 */
+    font-weight: 600 !important;
+}
+
+.submenu {
+    list-style: none;
+    padding-left: 1rem;
+    background-color: #f9f9f9;
+}
+
+.submenu .menu-item a {
+    padding-left: 2.5rem; /* 2뎁스 들여쓰기 */
+    font-size: 0.9rem;
+}
+
+.submenu .submenu .menu-item a {
+     padding-left: 3.5rem; /* 3뎁스 들여쓰기 */
+}
+
+
+/* --- Contents Styles --- */
+main.content {
+  flex: 1;
+  padding: 2rem;
+  /* background-color: #fff; */
+}
+
+.logout-btn {
+  background-color: transparent;
+  color: #ff4d4f;
+  border: 1px solid #ff4d4f;
+  padding: 4px 10px; /* 버튼 크기 살짝 줄임 */
+  border-radius: 4px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+/* 이미지 아이콘 정밀 제어 */
+.logout-img-icon {
+  width: 16px;  /* 원하는 사이즈로 고정 */
+  height: 16px;
+  object-fit: contain;
+
+  /* [중요] 이미지 파일 자체의 흰색 배경을 제거하는 코딩 */
+  /* 이미지가 배경보다 어두운 색일 때 흰색 배경을 투명하게 만듭니다. */
+  mix-blend-mode: multiply; 
+  
+  /* 만약 이미지가 밝은색이고 배경이 검은색이라면 screen 사용 */
+  /* mix-blend-mode: screen; */
+}
+
+.logout-btn:hover {
+  background-color: #ff4d4f;
+  color: #ffffff;
+}
+
+/* 호버 시 이미지가 흰색 배경 때문에 안 보일 수 있으므로 반전 처리 */
+.logout-btn:hover .logout-img-icon {
+  filter: brightness(0) invert(1);
+  mix-blend-mode: normal; /* 호버 시에는 블렌딩 해제 */
+}
+
+
+/* --- 반응형 처리 (모바일 화면) --- */
+@media (max-width: 768px) {
+  .menu-toggle {
+    display: block; /* 모바일에서 햄버거 버튼 표시 */
+  }
+
+  nav.navigator {
+    position: fixed;
+    height: 100vh;
+    transform: translateX(-100%); /* 기본적으로 화면 밖으로 이동 */
+    z-index: 20; /* 헤더 위로 */
+  }
+
+  nav.navigator.is-open {
+    transform: translateX(0); /* 버튼 클릭 시 화면 안으로 이동 */
+  }
+  
+  /* 모바일에서 메뉴 열렸을 때 뒷 배경을 어둡게 처리하는 오버레이 추가 가능 */
+}

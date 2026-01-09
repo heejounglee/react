@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/static/css/main.f3316e8c.css",
+    "main.js": "/static/js/main.850a7231.js",
+    "static/media/HANAMDAUM_Body.ttf": "/static/media/HANAMDAUM_Body.4deb6d58f96dff7b5f7c.ttf",
+    "static/media/HANAMDAUM.ttf": "/static/media/HANAMDAUM.6d0e9f79de762a0377c2.ttf",
+    "index.html": "/index.html",
+    "main.f3316e8c.css.map": "/static/css/main.f3316e8c.css.map",
+    "main.850a7231.js.map": "/static/js/main.850a7231.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.f3316e8c.css",
+    "static/js/main.850a7231.js"
+  ]
+}
