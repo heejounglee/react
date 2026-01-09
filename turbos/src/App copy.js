@@ -16,6 +16,8 @@ import CustomerManagementPage from './pages/CustomerManagementPage';
 import LoginPage from './pages/LoginPage';
 
 
+/* 주석 */
+
 function App() {
   return (
     <Router>
